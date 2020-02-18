@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FD2156223FC0A8700BC2A2D /* TDDCalculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD2156123FC0A8700BC2A2D /* TDDCalculate.swift */; };
 		2FD75A3F23FB454E00F4AB38 /* TDDCalculate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FD75A3523FB454E00F4AB38 /* TDDCalculate.framework */; };
 		2FD75A4423FB454E00F4AB38 /* TDDCalculateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD75A4323FB454E00F4AB38 /* TDDCalculateTests.swift */; };
 		2FD75A4623FB454E00F4AB38 /* TDDCalculate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FD75A3823FB454E00F4AB38 /* TDDCalculate.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2FD2156123FC0A8700BC2A2D /* TDDCalculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDDCalculate.swift; sourceTree = "<group>"; };
 		2FD75A3523FB454E00F4AB38 /* TDDCalculate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TDDCalculate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD75A3823FB454E00F4AB38 /* TDDCalculate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDDCalculate.h; sourceTree = "<group>"; };
 		2FD75A3923FB454E00F4AB38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			children = (
 				2FD75A3823FB454E00F4AB38 /* TDDCalculate.h */,
 				2FD75A3923FB454E00F4AB38 /* Info.plist */,
+				2FD2156123FC0A8700BC2A2D /* TDDCalculate.swift */,
 			);
 			path = TDDCalculate;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					2FD75A3423FB454E00F4AB38 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 					2FD75A3D23FB454E00F4AB38 = {
 						CreatedOnToolsVersion = 11.3;
@@ -195,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FD2156223FC0A8700BC2A2D /* TDDCalculate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +345,7 @@
 		2FD75A4A23FB454E00F4AB38 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 576T8HK6X4;
@@ -356,6 +362,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.tdd.TDDCalculate;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +371,7 @@
 		2FD75A4B23FB454E00F4AB38 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 576T8HK6X4;
@@ -388,6 +396,7 @@
 		2FD75A4D23FB454E00F4AB38 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 576T8HK6X4;
 				INFOPLIST_FILE = TDDCalculateTests/Info.plist;
@@ -406,6 +415,7 @@
 		2FD75A4E23FB454E00F4AB38 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 576T8HK6X4;
 				INFOPLIST_FILE = TDDCalculateTests/Info.plist;

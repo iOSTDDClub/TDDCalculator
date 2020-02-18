@@ -10,25 +10,53 @@ import XCTest
 @testable import TDDCalculate
 
 class TDDCalculateTests: XCTestCase {
-
+    
+    var subject: TDDCalculate!
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        subject = TDDCalculate()
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testPlusSum() {
+        subject.append(operator: .plus, operand: "1")
+        subject.append(operator: .calculate, operand: "1")
+        XCTAssertEqual(subject.calculate(), "2")
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testCallPrintClosure() {
+        let expectation = XCTestExpectation()
+        subject.append(operator: .plus, operand: "1")
+        
+        subject.setPrintClosure { print in
+            XCTAssertEqual(print, "1 +")
+            expectation.fulfill()
         }
+        wait(for: [expectation], timeout: 0.1)
     }
+    
+    func testOverflow() {
+        subject.append(operator: .plus, operand: "\(Int.max)")
+        subject.append(operator: .calculate, operand: "\(Int.max)")
+        XCTAssertEqual(subject.calculate(), "18446744073709551614")
+    }
+}
 
+class TDDCalculate {
+    private var printClosure: ((String) -> Void)? = nil
+    
+    init(printClosure: ((String) -> Void)? = nil) {
+        self.printClosure = printClosure
+    }
+    
+    func setPrintClosure(printClosure: @escaping (String) -> Void) {
+        self.printClosure = printClosure
+    }
+    
+    func append(operator: SignOperator, operand: String) {
+        
+    }
+    
+    func calculate() -> String {
+        return ""
+    }
 }
