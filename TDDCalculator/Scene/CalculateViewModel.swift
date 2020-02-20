@@ -16,10 +16,11 @@ class CalculateViewModel {
     private let lastestResult = BehaviorRelay<String>(value: "")
     let onDisplayTypingText = BehaviorRelay<String>(value: "0")
     let onExpressionText = BehaviorRelay<String>(value: "")
-    private let calculator: TDDCalculateProtocol
+    private let calculator: TDDCalculator
     
     init() {
         self.calculator = TDDCalculator()
+        self.calculator.delegate = self
         self.inTyping
             .subscribe(onNext: { [weak self] text in
                 // 한글자씩 전달된다.

@@ -10,7 +10,8 @@
 internal class InternalCalculator {
 
     private let tokenizer: CalculatingTokenizer
-
+    weak var delegate: CalculatorDelegate?
+    
     init() {
         self.tokenizer = CalculatingTokenizer()
     }
