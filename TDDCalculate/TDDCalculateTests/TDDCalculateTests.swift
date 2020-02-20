@@ -16,47 +16,79 @@ class TDDCalculateTests: XCTestCase {
         subject = TDDCalculate()
     }
 
-
     func testPlusSum() {
-        subject.append(operator: .plus, operand: "1")
-        subject.append(operator: .calculate, operand: "1")
-        XCTAssertEqual(subject.calculate(), "2")
+        let sample = CalTestModel.sampleSum
+        subject.push(sample.commands)
+        XCTAssertEqual(subject.lastestResult, sample.expect)
     }
     
-    func testCallPrintClosure() {
+    func testCallResulClosure() {
         let expectation = XCTestExpectation()
-        subject.append(operator: .plus, operand: "1")
-        
-        subject.setPrintClosure { print in
-            XCTAssertEqual(print, "1 +")
+        let sample = CalTestModel.sampleSum
+        subject.push(sample.commands)
+        subject.setResultClosure { result in
+            XCTAssertEqual(result, sample.expect)
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.1)
     }
     
     func testOverflow() {
-        subject.append(operator: .plus, operand: "\(Int.max)")
-        subject.append(operator: .calculate, operand: "\(Int.max)")
-        XCTAssertEqual(subject.calculate(), "18446744073709551614")
+        subject.push(.operand("\(Int.max)"))
+        subject.push(.operator(.plus))
+        subject.push(.operand("\(Int.max)"))
+        subject.push(.equals)
+        XCTAssertEqual(subject.lastestResult, "18446744073709551614")
     }
 }
 
-class TDDCalculate {
-    private var printClosure: ((String) -> Void)? = nil
+struct CalTestModel {
+    let commands: [CalCommand]
+    let expect: String
+}
+
+extension CalTestModel {
+    static let sampleSum = CalTestModel(commands: [.operand("1"), .operator(.plus), .operand("1"), .equals], expect: "2")
+}
+
+internal class TDDCalculate {
+    private var onChangedCommand: (([CalCommand]) -> Void)? = nil
+    private var calStack = [CalCommand]()
+    private var onResultClosure: ((String) -> Void)?
+    private var _lastestResult: String = ""
     
-    init(printClosure: ((String) -> Void)? = nil) {
-        self.printClosure = printClosure
+    private var isStackOperator: Bool = false
+    func setResultClosure(complete: @escaping (String) -> Void) {
+        self.onResultClosure = complete
     }
     
-    func setPrintClosure(printClosure: @escaping (String) -> Void) {
-        self.printClosure = printClosure
+    func setOnChangedCommand(onChangedCommand: @escaping ([CalCommand]) -> Void) {
+        self.onChangedCommand = onChangedCommand
     }
     
-    func append(operator: SignOperator, operand: String) {
-        
+    func push(_ commands: [CalCommand]) {
+        commands.forEach {
+            self.push($0)
+        }
     }
-    
-    func calculate() -> String {
-        return ""
+    func push(_ command: CalCommand) {
+        switch command {
+        case .sign:
+            break
+        case .allClear:
+            break
+        case .equals:
+            while let command = calStack.popLast() {
+                
+            }
+            break
+        case .operand:
+            calStack.append(command)
+        case .operator:
+            calStack.append(command)
+        }
+    }
+    var lastestResult: String {
+        return self._lastestResult
     }
 }

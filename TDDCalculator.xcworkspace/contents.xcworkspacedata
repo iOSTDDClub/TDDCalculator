@@ -5,6 +5,9 @@
       location = "group:TDDCalculate/TDDCalculate.xcodeproj">
    </FileRef>
    <FileRef
-      location = "container:TDDCalculator.xcodeproj">
+      location = "group:TDDCalculator.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

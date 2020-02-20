@@ -3,20 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FAF9B0023FE9CB90071050B /* CalculateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAF9AFF23FE9CB90071050B /* CalculateViewModel.swift */; };
 		2FD2156523FC0C8900BC2A2D /* TDDCalculate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FD2156423FC0C8900BC2A2D /* TDDCalculate.framework */; };
 		2FD2156623FC0C8900BC2A2D /* TDDCalculate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2FD2156423FC0C8900BC2A2D /* TDDCalculate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2FD2156923FC0D6500BC2A2D /* SignOperator+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD2156823FC0D6500BC2A2D /* SignOperator+.swift */; };
 		2FD75A0A23FB450E00F4AB38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD75A0923FB450E00F4AB38 /* AppDelegate.swift */; };
 		2FD75A0C23FB450E00F4AB38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD75A0B23FB450E00F4AB38 /* SceneDelegate.swift */; };
-		2FD75A0E23FB450E00F4AB38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD75A0D23FB450E00F4AB38 /* ViewController.swift */; };
+		2FD75A0E23FB450E00F4AB38 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD75A0D23FB450E00F4AB38 /* CalculateViewController.swift */; };
 		2FD75A1123FB450E00F4AB38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD75A0F23FB450E00F4AB38 /* Main.storyboard */; };
 		2FD75A1323FB450F00F4AB38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FD75A1223FB450F00F4AB38 /* Assets.xcassets */; };
 		2FD75A1623FB450F00F4AB38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD75A1423FB450F00F4AB38 /* LaunchScreen.storyboard */; };
 		2FD75A2123FB450F00F4AB38 /* TDDCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD75A2023FB450F00F4AB38 /* TDDCalculatorTests.swift */; };
+		9F2C521D3C12D5E032FB6631 /* Pods_TDDCalculatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8C5370F6F16CA48365AE646 /* Pods_TDDCalculatorTests.framework */; };
+		DA6F126BBE73533CC64E623A /* Pods_TDDCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69429A2D630C745EFD7D4C33 /* Pods_TDDCalculator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,12 +47,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2FAF9AFF23FE9CB90071050B /* CalculateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewModel.swift; sourceTree = "<group>"; };
 		2FD2156423FC0C8900BC2A2D /* TDDCalculate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TDDCalculate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD2156823FC0D6500BC2A2D /* SignOperator+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignOperator+.swift"; sourceTree = "<group>"; };
 		2FD75A0623FB450E00F4AB38 /* TDDCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDDCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD75A0923FB450E00F4AB38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FD75A0B23FB450E00F4AB38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2FD75A0D23FB450E00F4AB38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2FD75A0D23FB450E00F4AB38 /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		2FD75A1023FB450E00F4AB38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2FD75A1223FB450F00F4AB38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FD75A1523FB450F00F4AB38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +61,12 @@
 		2FD75A1C23FB450F00F4AB38 /* TDDCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDDCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD75A2023FB450F00F4AB38 /* TDDCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDDCalculatorTests.swift; sourceTree = "<group>"; };
 		2FD75A2223FB450F00F4AB38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65D51DA2CC1D8632A6B7B43F /* Pods-TDDCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDDCalculator.release.xcconfig"; path = "Target Support Files/Pods-TDDCalculator/Pods-TDDCalculator.release.xcconfig"; sourceTree = "<group>"; };
+		69429A2D630C745EFD7D4C33 /* Pods_TDDCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TDDCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A832365661183F4BE3A12A6 /* Pods-TDDCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDDCalculator.debug.xcconfig"; path = "Target Support Files/Pods-TDDCalculator/Pods-TDDCalculator.debug.xcconfig"; sourceTree = "<group>"; };
+		BCB6FDE8586BF9D46B81105F /* Pods-TDDCalculatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDDCalculatorTests.release.xcconfig"; path = "Target Support Files/Pods-TDDCalculatorTests/Pods-TDDCalculatorTests.release.xcconfig"; sourceTree = "<group>"; };
+		E8C5370F6F16CA48365AE646 /* Pods_TDDCalculatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TDDCalculatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F856734BBE55EB8270B0BAC9 /* Pods-TDDCalculatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDDCalculatorTests.debug.xcconfig"; path = "Target Support Files/Pods-TDDCalculatorTests/Pods-TDDCalculatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FD2156523FC0C8900BC2A2D /* TDDCalculate.framework in Frameworks */,
+				DA6F126BBE73533CC64E623A /* Pods_TDDCalculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,16 +83,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F2C521D3C12D5E032FB6631 /* Pods_TDDCalculatorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		152FCE17292CF73FD0CED441 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A832365661183F4BE3A12A6 /* Pods-TDDCalculator.debug.xcconfig */,
+				65D51DA2CC1D8632A6B7B43F /* Pods-TDDCalculator.release.xcconfig */,
+				F856734BBE55EB8270B0BAC9 /* Pods-TDDCalculatorTests.debug.xcconfig */,
+				BCB6FDE8586BF9D46B81105F /* Pods-TDDCalculatorTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		2FD2156323FC0C8900BC2A2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				2FD2156423FC0C8900BC2A2D /* TDDCalculate.framework */,
+				69429A2D630C745EFD7D4C33 /* Pods_TDDCalculator.framework */,
+				E8C5370F6F16CA48365AE646 /* Pods_TDDCalculatorTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -89,7 +114,8 @@
 		2FD2156A23FC135200BC2A2D /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				2FD75A0D23FB450E00F4AB38 /* ViewController.swift */,
+				2FD75A0D23FB450E00F4AB38 /* CalculateViewController.swift */,
+				2FAF9AFF23FE9CB90071050B /* CalculateViewModel.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -101,6 +127,7 @@
 				2FD75A1F23FB450F00F4AB38 /* TDDCalculatorTests */,
 				2FD75A0723FB450E00F4AB38 /* Products */,
 				2FD2156323FC0C8900BC2A2D /* Frameworks */,
+				152FCE17292CF73FD0CED441 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,10 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2FD75A2523FB450F00F4AB38 /* Build configuration list for PBXNativeTarget "TDDCalculator" */;
 			buildPhases = (
+				E7A41123F305A961ADC35C22 /* [CP] Check Pods Manifest.lock */,
 				2FD75A0223FB450E00F4AB38 /* Sources */,
 				2FD75A0323FB450E00F4AB38 /* Frameworks */,
 				2FD75A0423FB450E00F4AB38 /* Resources */,
 				2FD2156723FC0C8900BC2A2D /* Embed Frameworks */,
+				9957138D522F724B1F638B2E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -162,6 +191,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2FD75A2823FB450F00F4AB38 /* Build configuration list for PBXNativeTarget "TDDCalculatorTests" */;
 			buildPhases = (
+				B1D0DD434586A9D27C5E307B /* [CP] Check Pods Manifest.lock */,
 				2FD75A1823FB450F00F4AB38 /* Sources */,
 				2FD75A1923FB450F00F4AB38 /* Frameworks */,
 				2FD75A1A23FB450F00F4AB38 /* Resources */,
@@ -234,13 +264,78 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9957138D522F724B1F638B2E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TDDCalculator/Pods-TDDCalculator-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TDDCalculator/Pods-TDDCalculator-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TDDCalculator/Pods-TDDCalculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1D0DD434586A9D27C5E307B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TDDCalculatorTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7A41123F305A961ADC35C22 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TDDCalculator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2FD75A0223FB450E00F4AB38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FD75A0E23FB450E00F4AB38 /* ViewController.swift in Sources */,
+				2FD75A0E23FB450E00F4AB38 /* CalculateViewController.swift in Sources */,
 				2FD75A0A23FB450E00F4AB38 /* AppDelegate.swift in Sources */,
+				2FAF9B0023FE9CB90071050B /* CalculateViewModel.swift in Sources */,
 				2FD2156923FC0D6500BC2A2D /* SignOperator+.swift in Sources */,
 				2FD75A0C23FB450E00F4AB38 /* SceneDelegate.swift in Sources */,
 			);
@@ -400,6 +495,7 @@
 		};
 		2FD75A2623FB450F00F4AB38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A832365661183F4BE3A12A6 /* Pods-TDDCalculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -418,6 +514,7 @@
 		};
 		2FD75A2723FB450F00F4AB38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65D51DA2CC1D8632A6B7B43F /* Pods-TDDCalculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -436,6 +533,7 @@
 		};
 		2FD75A2923FB450F00F4AB38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F856734BBE55EB8270B0BAC9 /* Pods-TDDCalculatorTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -458,6 +556,7 @@
 		};
 		2FD75A2A23FB450F00F4AB38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCB6FDE8586BF9D46B81105F /* Pods-TDDCalculatorTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

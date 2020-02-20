@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2FD2156223FC0A8700BC2A2D /* TDDCalculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD2156123FC0A8700BC2A2D /* TDDCalculate.swift */; };
+		2F533A3523FEA573002EFA38 /* CalculatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F533A3423FEA573002EFA38 /* CalculatorDelegate.swift */; };
+		2FAF9B0623FEA0590071050B /* TDDCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAF9B0423FE9F700071050B /* TDDCalculator.swift */; };
+		2FAF9B0823FEA1110071050B /* CalculatingTokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAF9B0723FEA1110071050B /* CalculatingTokenizer.swift */; };
+		2FAF9B0A23FEA3CB0071050B /* InternalCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAF9B0923FEA3CB0071050B /* InternalCalculator.swift */; };
+		2FD2156C23FC1E8B00BC2A2D /* CalCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD2156B23FC1E8B00BC2A2D /* CalCommand.swift */; };
+		2FD2156E23FC1F0A00BC2A2D /* CalOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD2156D23FC1F0A00BC2A2D /* CalOperator.swift */; };
 		2FD75A3F23FB454E00F4AB38 /* TDDCalculate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FD75A3523FB454E00F4AB38 /* TDDCalculate.framework */; };
 		2FD75A4423FB454E00F4AB38 /* TDDCalculateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD75A4323FB454E00F4AB38 /* TDDCalculateTests.swift */; };
 		2FD75A4623FB454E00F4AB38 /* TDDCalculate.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FD75A3823FB454E00F4AB38 /* TDDCalculate.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,7 +29,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2FD2156123FC0A8700BC2A2D /* TDDCalculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDDCalculate.swift; sourceTree = "<group>"; };
+		2F533A3423FEA573002EFA38 /* CalculatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorDelegate.swift; sourceTree = "<group>"; };
+		2FAF9B0423FE9F700071050B /* TDDCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDDCalculator.swift; sourceTree = "<group>"; };
+		2FAF9B0723FEA1110071050B /* CalculatingTokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatingTokenizer.swift; sourceTree = "<group>"; };
+		2FAF9B0923FEA3CB0071050B /* InternalCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalCalculator.swift; sourceTree = "<group>"; };
+		2FD2156B23FC1E8B00BC2A2D /* CalCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalCommand.swift; sourceTree = "<group>"; };
+		2FD2156D23FC1F0A00BC2A2D /* CalOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalOperator.swift; sourceTree = "<group>"; };
 		2FD75A3523FB454E00F4AB38 /* TDDCalculate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TDDCalculate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD75A3823FB454E00F4AB38 /* TDDCalculate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDDCalculate.h; sourceTree = "<group>"; };
 		2FD75A3923FB454E00F4AB38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +62,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FAF9B0523FE9F700071050B /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				2FAF9B0723FEA1110071050B /* CalculatingTokenizer.swift */,
+				2FAF9B0923FEA3CB0071050B /* InternalCalculator.swift */,
+				2F533A3423FEA573002EFA38 /* CalculatorDelegate.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		2FAF9B0B23FEA4AD0071050B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2FD2156B23FC1E8B00BC2A2D /* CalCommand.swift */,
+				2FD2156D23FC1F0A00BC2A2D /* CalOperator.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2FD75A2B23FB454E00F4AB38 = {
 			isa = PBXGroup;
 			children = (
@@ -73,9 +102,11 @@
 		2FD75A3723FB454E00F4AB38 /* TDDCalculate */ = {
 			isa = PBXGroup;
 			children = (
+				2FAF9B0B23FEA4AD0071050B /* Model */,
+				2FAF9B0523FE9F700071050B /* Logic */,
 				2FD75A3823FB454E00F4AB38 /* TDDCalculate.h */,
 				2FD75A3923FB454E00F4AB38 /* Info.plist */,
-				2FD2156123FC0A8700BC2A2D /* TDDCalculate.swift */,
+				2FAF9B0423FE9F700071050B /* TDDCalculator.swift */,
 			);
 			path = TDDCalculate;
 			sourceTree = "<group>";
@@ -199,7 +230,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FD2156223FC0A8700BC2A2D /* TDDCalculate.swift in Sources */,
+				2F533A3523FEA573002EFA38 /* CalculatorDelegate.swift in Sources */,
+				2FAF9B0623FEA0590071050B /* TDDCalculator.swift in Sources */,
+				2FD2156C23FC1E8B00BC2A2D /* CalCommand.swift in Sources */,
+				2FD2156E23FC1F0A00BC2A2D /* CalOperator.swift in Sources */,
+				2FAF9B0A23FEA3CB0071050B /* InternalCalculator.swift in Sources */,
+				2FAF9B0823FEA1110071050B /* CalculatingTokenizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

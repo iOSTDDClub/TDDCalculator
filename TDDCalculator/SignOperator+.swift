@@ -8,7 +8,7 @@
 
 import TDDCalculate
 
-extension SignOperator {
+extension CalOperator {
     public var presentDescription: String {
         switch self {
         case .plus:
@@ -19,12 +19,8 @@ extension SignOperator {
             return "÷"
         case .remainder:
             return "%"
-        case .sign:
-            return "±"
         case .multiply:
             return "×"
-        case .calculate:
-            return "="
         }
     }
 }
