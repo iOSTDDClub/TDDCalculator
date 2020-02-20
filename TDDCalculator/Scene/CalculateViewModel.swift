@@ -13,8 +13,9 @@ import TDDCalculate
 class CalculateViewModel {
     private var disposeBag = DisposeBag()
     let inTyping = PublishRelay<String>()
-    let onResult = BehaviorRelay<String>(value: "")
-    let onDisplayText = BehaviorRelay<String>(value: "")
+    private let lastestResult = BehaviorRelay<String>(value: "")
+    let onDisplayTypingText = BehaviorRelay<String>(value: "0")
+    let onExpressionText = BehaviorRelay<String>(value: "")
     private let calculator: TDDCalculateProtocol
     
     init() {
@@ -29,19 +30,22 @@ class CalculateViewModel {
 }
 
 extension CalculateViewModel: CalculatorDelegate {
-    func onCalculate(command: [CalCommand]) {
-        onDisplayText.accept(command.displayText())
+    func didTypingOperator(operator: CalOperator, command: [CalCommand]) {
+        self.onExpressionText.accept(command.displayExpression())
     }
     
-    
-    func onCalculate(result: String) {
-        self.onResult.accept(result)
+    func didTypingOperand(operand: String) {
+        self.onDisplayTypingText.accept(operand)
     }
     
+    func onCalculate(result: String, command: [CalCommand]) {
+        self.onDisplayTypingText.accept(result)
+        self.lastestResult.accept(result)
+    }
 }
 
 private extension Array where Element == CalCommand {
-    func displayText() -> String {
+    func displayExpression() -> String {
         return ""
     }
 }

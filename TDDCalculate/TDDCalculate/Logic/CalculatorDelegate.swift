@@ -9,6 +9,7 @@
 import Foundation
 
 public protocol CalculatorDelegate: class {
-    func onCalculate(command: [CalCommand])
-    func onCalculate(result: String)
+    func didTypingOperand(operand: String)
+    func didTypingOperator(operator: CalOperator, command: [CalCommand])
+    func onCalculate(result: String, command: [CalCommand])
 }

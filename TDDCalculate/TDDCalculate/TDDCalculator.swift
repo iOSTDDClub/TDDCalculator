@@ -25,11 +25,15 @@ public class TDDCalculator: TDDCalculateProtocol {
 }
 
 extension TDDCalculator: CalculatorDelegate {
-    public func onCalculate(command: [CalCommand]) {
-        self.delegate?.onCalculate(command: command)
+    public func didTypingOperand(operand: String) {
+        self.delegate?.didTypingOperand(operand: operand)
     }
     
-    public func onCalculate(result: String) {
-        self.delegate?.onCalculate(result: result)
+    public func didTypingOperator(operator: CalOperator, command: [CalCommand]) {
+        self.delegate?.didTypingOperator(operator: `operator`, command: command)
+    }
+    
+    public func onCalculate(result: String, command: [CalCommand]) {
+        self.delegate?.onCalculate(result: result, command: command)
     }
 }
