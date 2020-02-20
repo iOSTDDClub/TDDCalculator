@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F533A3823FEB1AC002EFA38 /* CalDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F533A3723FEB1AC002EFA38 /* CalDisplayCell.swift */; };
+		2F533A3A23FEB1DB002EFA38 /* CalActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F533A3923FEB1DB002EFA38 /* CalActionCell.swift */; };
+		2F533A3C23FEB2AF002EFA38 /* CalculatingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F533A3B23FEB2AF002EFA38 /* CalculatingSection.swift */; };
 		2FAF9B0023FE9CB90071050B /* CalculateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAF9AFF23FE9CB90071050B /* CalculateViewModel.swift */; };
 		2FD2156523FC0C8900BC2A2D /* TDDCalculate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FD2156423FC0C8900BC2A2D /* TDDCalculate.framework */; };
 		2FD2156623FC0C8900BC2A2D /* TDDCalculate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2FD2156423FC0C8900BC2A2D /* TDDCalculate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -47,6 +50,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2F533A3723FEB1AC002EFA38 /* CalDisplayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalDisplayCell.swift; sourceTree = "<group>"; };
+		2F533A3923FEB1DB002EFA38 /* CalActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalActionCell.swift; sourceTree = "<group>"; };
+		2F533A3B23FEB2AF002EFA38 /* CalculatingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatingSection.swift; sourceTree = "<group>"; };
 		2FAF9AFF23FE9CB90071050B /* CalculateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewModel.swift; sourceTree = "<group>"; };
 		2FD2156423FC0C8900BC2A2D /* TDDCalculate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TDDCalculate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD2156823FC0D6500BC2A2D /* SignOperator+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignOperator+.swift"; sourceTree = "<group>"; };
@@ -101,6 +107,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		2F533A3623FEB19E002EFA38 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2F533A3723FEB1AC002EFA38 /* CalDisplayCell.swift */,
+				2F533A3923FEB1DB002EFA38 /* CalActionCell.swift */,
+				2F533A3B23FEB2AF002EFA38 /* CalculatingSection.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		2FD2156323FC0C8900BC2A2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +130,7 @@
 		2FD2156A23FC135200BC2A2D /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				2F533A3623FEB19E002EFA38 /* Cell */,
 				2FD75A0D23FB450E00F4AB38 /* CalculateViewController.swift */,
 				2FAF9AFF23FE9CB90071050B /* CalculateViewModel.swift */,
 			);
@@ -334,10 +351,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FD75A0E23FB450E00F4AB38 /* CalculateViewController.swift in Sources */,
+				2F533A3823FEB1AC002EFA38 /* CalDisplayCell.swift in Sources */,
 				2FD75A0A23FB450E00F4AB38 /* AppDelegate.swift in Sources */,
 				2FAF9B0023FE9CB90071050B /* CalculateViewModel.swift in Sources */,
+				2F533A3A23FEB1DB002EFA38 /* CalActionCell.swift in Sources */,
 				2FD2156923FC0D6500BC2A2D /* SignOperator+.swift in Sources */,
 				2FD75A0C23FB450E00F4AB38 /* SceneDelegate.swift in Sources */,
+				2F533A3C23FEB2AF002EFA38 /* CalculatingSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

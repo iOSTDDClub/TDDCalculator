@@ -10,6 +10,8 @@ import RxSwift
 import RxCocoa
 import TDDCalculate
 
+
+
 class CalculateViewModel {
     private var disposeBag = DisposeBag()
     let inTyping = PublishRelay<String>()
@@ -17,6 +19,7 @@ class CalculateViewModel {
     let onDisplayTypingText = BehaviorRelay<String>(value: "0")
     let onExpressionText = BehaviorRelay<String>(value: "")
     private let calculator: TDDCalculator
+    
     
     init() {
         self.calculator = TDDCalculator()
