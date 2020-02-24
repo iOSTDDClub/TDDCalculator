@@ -36,6 +36,10 @@ internal class InternalCalculator {
 }
 
 extension InternalCalculator: CalculatingTokenDelegate {
+    func calculatingToken(operand: String) {
+        self.delegate?.didTypingOperand(operand: operand)
+    }
+    
     func calculatingToken(command: CalCommand) {
         self.commandCalculate(command: command)
     }
