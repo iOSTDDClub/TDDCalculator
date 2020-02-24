@@ -19,10 +19,16 @@ protocol CalculatingTokenDelegate: class {
 internal class CalculatingTokenizer {
     
     weak var delegate: CalculatingTokenDelegate?
+    var operand: String = String()
     
-    private var operandBuffer = [String]()
     
     func token(_ char: Character) {
-        
+        // 오퍼레이터
+        if CalOperator.allCases.description.contains(char) {
+            delegate?.calculatingToken(command: .operand(operand))
+            delegate?.calculatingToken(command: .operator(CalOperator.plus))
+        } else {
+            operand = operand + String(char)
+        }
     }
 }
