@@ -8,12 +8,12 @@
 
 
 internal class InternalCalculator {
-
     private let tokenizer: CalculatingTokenizer
     weak var delegate: CalculatorDelegate?
     
     init() {
         self.tokenizer = CalculatingTokenizer()
+        self.tokenizer.delegate = self
     }
     private func commandCalculate(command: CalCommand) {
         switch command {
@@ -36,9 +36,10 @@ internal class InternalCalculator {
 }
 
 extension InternalCalculator: CalculatingTokenDelegate {
-    func calculatingToken(operand: String) {
+    func typingOperand(operand: String) {
         self.delegate?.didTypingOperand(operand: operand)
     }
+    
     
     func calculatingToken(command: CalCommand) {
         self.commandCalculate(command: command)

@@ -10,7 +10,7 @@ import Foundation
 
 protocol CalculatingTokenDelegate: class {
     func calculatingToken(command: CalCommand)
-    func calculatingToken(operand: String)
+    func typingOperand(operand: String)
 }
 
 /**
@@ -31,7 +31,7 @@ internal class CalculatingTokenizer {
             operand = ""
         } else {
             operand = operand + String(char)
-            self.delegate?.calculatingToken(operand: operand)
+            self.delegate?.typingOperand(operand: operand)
         }
     }
 }

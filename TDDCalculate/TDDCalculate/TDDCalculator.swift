@@ -9,14 +9,18 @@
 public class TDDCalculator {
 
     private let calculator: InternalCalculator
-    public weak var delegate: CalculatorDelegate?
+    public weak var delegate: CalculatorDelegate? {
+        didSet {
+            self.calculator.delegate = delegate
+        }
+    }
     
     public init() {
         self.calculator = InternalCalculator()
-        self.calculator.delegate = delegate
     }
 
     public func input(_ char: Character) {
         self.calculator.calculate(char)
     }
 }
+
