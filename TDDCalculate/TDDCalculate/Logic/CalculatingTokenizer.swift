@@ -25,11 +25,11 @@ internal class CalculatingTokenizer {
     func token(_ char: Character) {
         // 오퍼레이터
         if CalOperator.allCases.description.contains(char) {
-            operand = ""
+            delegate?.calculatingToken(command: .operand(operand))
             delegate?.calculatingToken(command: .operator(CalOperator.plus))
+            operand = ""
         } else {
             operand = operand + String(char)
-            delegate?.calculatingToken(command: .operand(operand))
         }
     }
 }

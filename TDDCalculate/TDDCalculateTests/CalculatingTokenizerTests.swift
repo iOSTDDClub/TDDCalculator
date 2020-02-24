@@ -23,30 +23,47 @@ class CalculatingTokenizerTests: XCTestCase {
     
     func testTokenOperand() {
         self.subject.token("1")
-        XCTAssertEqual(self.delegate.invokedCalculatingTokenCount, 1)
-    }
-    
-    func testTokenOperand2() {
-        self.subject.token("1")
-        self.subject.token("2")
-        XCTAssertEqual(self.delegate.invokedCalculatingTokenCount, 2)
-    }
-    
-    func testTokenOperator() {
-        self.subject.token("1")
         self.subject.token("+")
         XCTAssertEqual(self.delegate.invokedCalculatingTokenCount, 2)
         XCTAssertEqual(self.delegate.invokedCalculatingTokenParametersList[0].command, CalCommand.operand("1"))
         XCTAssertEqual(self.delegate.invokedCalculatingTokenParametersList[1].command, CalCommand.operator(.plus))
     }
     
-    func xtestTokenOperator2() {
+    func testTokenOperand2() {
         self.subject.token("1")
-        self.subject.token("-")
+        self.subject.token("2")
+        self.subject.token("+")
         XCTAssertEqual(self.delegate.invokedCalculatingTokenCount, 2)
-        XCTAssertEqual(self.delegate.invokedCalculatingTokenParametersList[0].command, CalCommand.operand("1"))
-        XCTAssertEqual(self.delegate.invokedCalculatingTokenParametersList[1].command, CalCommand.operator(.minus))
+        XCTAssertEqual(self.delegate.invokedCalculatingTokenParametersList[0].command, CalCommand.operand("12"))
+        XCTAssertEqual(self.delegate.invokedCalculatingTokenParametersList[1].command, CalCommand.operator(.plus))
     }
+    
+//    func testTokenOperand3() {
+//        self.subject.token("1")
+//        self.subject.token("2")
+//        self.subject.token("+")
+//        self.subject.token("3")
+//        XCTAssertEqual(self.delegate.invokedCalculatingTokenCount, 4)
+//        XCTAssertEqual(self.delegate.invokedCalculatingTokenParametersList[0].command, CalCommand.operand("12"))
+//        XCTAssertEqual(self.delegate.invokedCalculatingTokenParametersList[1].command, CalCommand.operator(.plus))
+//        XCTAssertEqual(self.delegate.invokedCalculatingTokenParametersList[0].command, CalCommand.operand("3"))
+//    }
+    
+//    func testTokenOperator() {
+//        self.subject.token("1")
+//        self.subject.token("+")
+//        XCTAssertEqual(self.delegate.invokedCalculatingTokenCount, 2)
+//        XCTAssertEqual(self.delegate.invokedCalculatingTokenParametersList[0].command, CalCommand.operand("1"))
+//        XCTAssertEqual(self.delegate.invokedCalculatingTokenParametersList[1].command, CalCommand.operator(.plus))
+//    }
+    
+//    func xtestTokenOperator2() {
+//        self.subject.token("1")
+//        self.subject.token("-")
+//        XCTAssertEqual(self.delegate.invokedCalculatingTokenCount, 2)
+//        XCTAssertEqual(self.delegate.invokedCalculatingTokenParametersList[0].command, CalCommand.operand("1"))
+//        XCTAssertEqual(self.delegate.invokedCalculatingTokenParametersList[1].command, CalCommand.operator(.minus))
+//    }
 }
 
 class StubCalculatingTokenDelegate: CalculatingTokenDelegate {
