@@ -24,14 +24,25 @@ class TDDCalculateTests: XCTestCase {
         subject.input("1")
         subject.input("2")
         XCTAssertEqual(delegate.invokedDidTypingOperandCount, 2)
-//        XCTAssertEqual(delegate.invokedDidTypingOperandParametersList.first, "1")
-//        XCTAssertEqual(delegate.invokedDidTypingOperandParametersList[1], "2")
+        XCTAssertEqual(delegate.invokedDidTypingOperandParametersList[0].operand, "1")
+        XCTAssertEqual(delegate.invokedDidTypingOperandParametersList[1].operand, "12")
     }
     
     func test_TypingOperator_invokeDidTypingOperator() {
         subject.input("1")
-        XCTAssertEqual(delegate.invokedDidTypingOperandCount, 1)
-        XCTAssertEqual(delegate.invokedDidTypingOperatorCount, 1)
+        subject.input("2")
+        subject.input("+")
+        subject.input("3")
+        subject.input("=")
+        
+        XCTAssertEqual(delegate.invokedOnCalculateCount, 1)
+        XCTAssertEqual(delegate.invokedOnCalculateParametersList[0].result, "15")
+        XCTAssertEqual(delegate.invokedOnCalculateParametersList[0].command, [
+            .operand("12"),
+            .operator(.plus),
+            .operand("3"),
+            .equals
+        ])
     }
 }
 
