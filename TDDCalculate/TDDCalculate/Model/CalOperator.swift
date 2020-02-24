@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum CalOperator {
+public enum CalOperator: CaseIterable {
     case plus
     case minus
     case multiply
