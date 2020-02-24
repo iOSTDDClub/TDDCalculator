@@ -40,7 +40,7 @@ class CalculatingTokenizerTests: XCTestCase {
         XCTAssertEqual(self.delegate.invokedCalculatingTokenParametersList[1].command, CalCommand.operator(.plus))
     }
     
-    func testTokenOperator2() {
+    func xtestTokenOperator2() {
         self.subject.token("1")
         self.subject.token("-")
         XCTAssertEqual(self.delegate.invokedCalculatingTokenCount, 2)
