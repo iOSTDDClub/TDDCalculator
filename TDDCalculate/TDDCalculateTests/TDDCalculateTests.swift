@@ -11,84 +11,59 @@ import XCTest
 
 class TDDCalculateTests: XCTestCase {
     
-    var subject: TDDCalculate!
+    var subject: TDDCalculator!
+    var delegate: StubCalculatorDelegate!
+    
     override func setUp() {
-        subject = TDDCalculate()
+        subject = TDDCalculator()
+        delegate = StubCalculatorDelegate()
+        subject.delegate = delegate
     }
 
-    func testPlusSum() {
-        let sample = CalTestModel.sampleSum
-        subject.push(sample.commands)
-        XCTAssertEqual(subject.lastestResult, sample.expect)
+    func test_TypingOperand_invokeDidTypingOperand() {
+        subject.input("1")
+        subject.input("2")
+        XCTAssertEqual(delegate.invokedDidTypingOperandCount, 2)
+//        XCTAssertEqual(delegate.invokedDidTypingOperandParametersList.first, "1")
+//        XCTAssertEqual(delegate.invokedDidTypingOperandParametersList[1], "2")
     }
     
-    func testCallResulClosure() {
-        let expectation = XCTestExpectation()
-        let sample = CalTestModel.sampleSum
-        subject.push(sample.commands)
-        subject.setResultClosure { result in
-            XCTAssertEqual(result, sample.expect)
-            expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 0.1)
-    }
-    
-    func testOverflow() {
-        subject.push(.operand("\(Int.max)"))
-        subject.push(.operator(.plus))
-        subject.push(.operand("\(Int.max)"))
-        subject.push(.equals)
-        XCTAssertEqual(subject.lastestResult, "18446744073709551614")
+    func test_TypingOperator_invokeDidTypingOperator() {
+        subject.input("1")
+        XCTAssertEqual(delegate.invokedDidTypingOperandCount, 1)
+        XCTAssertEqual(delegate.invokedDidTypingOperatorCount, 1)
     }
 }
 
-struct CalTestModel {
-    let commands: [CalCommand]
-    let expect: String
-}
-
-extension CalTestModel {
-    static let sampleSum = CalTestModel(commands: [.operand("1"), .operator(.plus), .operand("1"), .equals], expect: "2")
-}
-
-internal class TDDCalculate {
-    private var onChangedCommand: (([CalCommand]) -> Void)? = nil
-    private var calStack = [CalCommand]()
-    private var onResultClosure: ((String) -> Void)?
-    private var _lastestResult: String = ""
-    
-    private var isStackOperator: Bool = false
-    func setResultClosure(complete: @escaping (String) -> Void) {
-        self.onResultClosure = complete
+class StubCalculatorDelegate: CalculatorDelegate {
+    var invokedDidTypingOperand = false
+    var invokedDidTypingOperandCount = 0
+    var invokedDidTypingOperandParameters: (operand: String, Void)?
+    var invokedDidTypingOperandParametersList = [(operand: String, Void)]()
+    func didTypingOperand(operand: String) {
+        invokedDidTypingOperand = true
+        invokedDidTypingOperandCount += 1
+        invokedDidTypingOperandParameters = (operand, ())
+        invokedDidTypingOperandParametersList.append((operand, ()))
     }
-    
-    func setOnChangedCommand(onChangedCommand: @escaping ([CalCommand]) -> Void) {
-        self.onChangedCommand = onChangedCommand
+    var invokedDidTypingOperator = false
+    var invokedDidTypingOperatorCount = 0
+    var invokedDidTypingOperatorParameters: (operator: CalOperator, command: [CalCommand])?
+    var invokedDidTypingOperatorParametersList = [(operator: CalOperator, command: [CalCommand])]()
+    func didTypingOperator(operator: CalOperator, command: [CalCommand]) {
+        invokedDidTypingOperator = true
+        invokedDidTypingOperatorCount += 1
+        invokedDidTypingOperatorParameters = (`operator`, command)
+        invokedDidTypingOperatorParametersList.append((`operator`, command))
     }
-    
-    func push(_ commands: [CalCommand]) {
-        commands.forEach {
-            self.push($0)
-        }
-    }
-    func push(_ command: CalCommand) {
-        switch command {
-        case .sign:
-            break
-        case .allClear:
-            break
-        case .equals:
-            while let command = calStack.popLast() {
-                
-            }
-            break
-        case .operand:
-            calStack.append(command)
-        case .operator:
-            calStack.append(command)
-        }
-    }
-    var lastestResult: String {
-        return self._lastestResult
+    var invokedOnCalculate = false
+    var invokedOnCalculateCount = 0
+    var invokedOnCalculateParameters: (result: String, command: [CalCommand])?
+    var invokedOnCalculateParametersList = [(result: String, command: [CalCommand])]()
+    func onCalculate(result: String, command: [CalCommand]) {
+        invokedOnCalculate = true
+        invokedOnCalculateCount += 1
+        invokedOnCalculateParameters = (result, command)
+        invokedOnCalculateParametersList.append((result, command))
     }
 }

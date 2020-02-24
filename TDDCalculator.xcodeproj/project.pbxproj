@@ -13,7 +13,6 @@
 		2FAF9B0023FE9CB90071050B /* CalculateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAF9AFF23FE9CB90071050B /* CalculateViewModel.swift */; };
 		2FD2156523FC0C8900BC2A2D /* TDDCalculate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FD2156423FC0C8900BC2A2D /* TDDCalculate.framework */; };
 		2FD2156623FC0C8900BC2A2D /* TDDCalculate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2FD2156423FC0C8900BC2A2D /* TDDCalculate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2FD2156923FC0D6500BC2A2D /* SignOperator+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD2156823FC0D6500BC2A2D /* SignOperator+.swift */; };
 		2FD75A0A23FB450E00F4AB38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD75A0923FB450E00F4AB38 /* AppDelegate.swift */; };
 		2FD75A0C23FB450E00F4AB38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD75A0B23FB450E00F4AB38 /* SceneDelegate.swift */; };
 		2FD75A0E23FB450E00F4AB38 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD75A0D23FB450E00F4AB38 /* CalculateViewController.swift */; };
@@ -55,7 +54,6 @@
 		2F533A3B23FEB2AF002EFA38 /* CalculatingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatingSection.swift; sourceTree = "<group>"; };
 		2FAF9AFF23FE9CB90071050B /* CalculateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewModel.swift; sourceTree = "<group>"; };
 		2FD2156423FC0C8900BC2A2D /* TDDCalculate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TDDCalculate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FD2156823FC0D6500BC2A2D /* SignOperator+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignOperator+.swift"; sourceTree = "<group>"; };
 		2FD75A0623FB450E00F4AB38 /* TDDCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDDCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD75A0923FB450E00F4AB38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FD75A0B23FB450E00F4AB38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,7 +165,6 @@
 				2FD75A1223FB450F00F4AB38 /* Assets.xcassets */,
 				2FD75A1423FB450F00F4AB38 /* LaunchScreen.storyboard */,
 				2FD75A1723FB450F00F4AB38 /* Info.plist */,
-				2FD2156823FC0D6500BC2A2D /* SignOperator+.swift */,
 			);
 			path = TDDCalculator;
 			sourceTree = "<group>";
@@ -355,7 +352,6 @@
 				2FD75A0A23FB450E00F4AB38 /* AppDelegate.swift in Sources */,
 				2FAF9B0023FE9CB90071050B /* CalculateViewModel.swift in Sources */,
 				2F533A3A23FEB1DB002EFA38 /* CalActionCell.swift in Sources */,
-				2FD2156923FC0D6500BC2A2D /* SignOperator+.swift in Sources */,
 				2FD75A0C23FB450E00F4AB38 /* SceneDelegate.swift in Sources */,
 				2F533A3C23FEB2AF002EFA38 /* CalculatingSection.swift in Sources */,
 			);

@@ -15,3 +15,20 @@ public enum CalOperator {
     case divide
     case remainder
 }
+
+extension CalOperator: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .plus:
+            return "+"
+        case .minus:
+            return "−"
+        case .divide:
+            return "÷"
+        case .remainder:
+            return "%"
+        case .multiply:
+            return "×"
+        }
+    }
+}

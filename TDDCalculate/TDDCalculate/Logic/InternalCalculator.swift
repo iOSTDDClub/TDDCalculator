@@ -30,8 +30,8 @@ internal class InternalCalculator {
         }
     }
 
-    func calculate(text: String) {
-        self.tokenizer.token(text)
+    func calculate(_ char: Character) {
+        self.tokenizer.token(char)
     }
 }
 

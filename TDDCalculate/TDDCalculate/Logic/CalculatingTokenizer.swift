@@ -20,7 +20,9 @@ internal class CalculatingTokenizer {
     
     weak var delegate: CalculatingTokenDelegate?
     
-    func token(_ text: String) {
+    private var operandBuffer = [CalCommand]()
+    
+    func token(_ char: Character) {
         
     }
 }

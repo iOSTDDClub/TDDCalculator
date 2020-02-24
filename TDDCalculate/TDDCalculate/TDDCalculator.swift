@@ -16,7 +16,7 @@ public class TDDCalculator {
         self.calculator.delegate = delegate
     }
 
-    public func input(_ text: String) {
-        self.calculator.calculate(text: text)
+    public func input(_ char: Character) {
+        self.calculator.calculate(char)
     }
 }
