@@ -25,6 +25,7 @@ class CalculatingTokenizerTests: XCTestCase {
         self.subject.token("+")
         XCTAssertEqual(self.delegate.invokedCalculatingTokenCount, 2)
         XCTAssertEqual(self.delegate.invokedCalculatingTokenParametersList[0].command, CalCommand.operand("1"))
+        XCTAssertEqual(self.delegate.invokedCalculatingTokenParametersList[0].command, CalCommand.operand("+"))
     }
 }
 
@@ -33,6 +34,7 @@ class StubCalculatingTokenDelegate: CalculatingTokenDelegate {
     var invokedCalculatingTokenCount = 0
     var invokedCalculatingTokenParameters: (command: CalCommand, Void)?
     var invokedCalculatingTokenParametersList = [(command: CalCommand, Void)]()
+    
     func calculatingToken(command: CalCommand) {
         invokedCalculatingToken = true
         invokedCalculatingTokenCount += 1

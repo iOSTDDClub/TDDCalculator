@@ -14,6 +14,9 @@ import TDDCalculate
 
 class CalculateViewModel {
     private var disposeBag = DisposeBag()
+    /**
+     1글자씩 타이핑을 받아서 TDDCalculator로 넘겨준다.
+     */
     let inTyping = PublishRelay<String>()
     private let lastestResult = BehaviorRelay<String>(value: "")
     let onDisplayTypingText = BehaviorRelay<String>(value: "0")
